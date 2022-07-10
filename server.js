@@ -26,7 +26,7 @@ app.get('/fristpage',(req,res)=>{
     return res.send("Hello my test page")
 })
 
-app.get('/get-jason', (req,res) => {
+app.get('/get-json', (req,res) => {
     return res.json({
         id : 1
     })
@@ -42,8 +42,9 @@ app.post('/post-name',(req,res) =>{
     console.log(req);
    return res.json(req.body)
 })
-//Routes
 
+
+//Routes
 const user = require('./Routes/userRoute');
 app.use('/user',user);
 
