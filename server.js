@@ -49,4 +49,4 @@ app.use('/user',user);
 
 
 
-app.listen(5000 , () => console.log("server start at 8000")) ;
+app.listen(5000 , () => console.log("server start at 5000")) ;

@@ -84,4 +84,35 @@ userRouter.post("/update-user", (req, res) => {
     });
 });
 
+userRouter.get("/get-all",(req,res) => {
+  
+  userModel.findAll()
+  .then((data)=>{
+    res.status(200).json(data)
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+}) 
+
+userRouter.get("/get-all-count",(req,res) => {
+  const {count,rows} =  userModel.findAndCountAll({
+    where: {
+      name: "aim"
+    },
+    offset: 10,
+    limit:2
+  })
+  .then((data) => {
+    console.log(data.count);
+    console.log(data.rows);
+    res.status(200).json(count)
+  })
+  
+
+})
+
+
+
+
 module.exports = userRouter;
